@@ -37,7 +37,7 @@ with DAG(
     
     ## Task 2 is a Python Operator that runs the print_command method above 
     task2 = PythonOperator(
-      task_id = 'print_number_of_uploads',
+      task_id = 'print_number',
       python_callable = print_command,
       provide_context = True,
       dag = dag)
