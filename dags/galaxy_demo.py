@@ -26,7 +26,7 @@ with DAG(
     ## in the tpch.tiny.customer table
     ## Ouput of this should be 1500 and printed in task2
     task1 = TrinoOperator(
-      task_id='uploads_performed',
+      task_id='select_star',
       trino_conn_id='galaxy_connection',
       sql='''
         select
