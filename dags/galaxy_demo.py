@@ -9,7 +9,7 @@ from trino_operator import TrinoOperator
 ## This method is called by task2 (below) to retrieve and print to the logs the return value of task1
 def print_command(**kwargs):
         task_instance = kwargs['task_instance']
-        print('Return Value: ',task_instance.xcom_pull(task_ids='uploads_performed',key='return_value'))
+        print('Return Value: ',task_instance.xcom_pull(task_ids='select_star',key='return_value'))
 
 with DAG(
     default_args={
