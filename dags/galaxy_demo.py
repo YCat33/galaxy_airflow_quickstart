@@ -45,7 +45,7 @@ with DAG(
 
     ## Task 3 is SQL DQ Check Operator that validates that the distinct values in custkey is 1500
     task3 = SQLColumnCheckOperator(
-        task_id="verify_total_number_of_uploads",
+        task_id="data_validation_check",
         conn_id="galaxy_connection",
         table="tpch.tiny.customer",
         column_mapping={
@@ -54,5 +54,5 @@ with DAG(
             }
         }
     )
-    # Looping back around the task1 and task2 to see updated upload number
+    # Defining Execution Order
     task1 >> task2 >> task3
