@@ -3,8 +3,8 @@ import pendulum
 from airflow import DAG
 from airflow.operators.python_operator import PythonOperator
 from airflow.providers.common.sql.operators.sql import SQLColumnCheckOperator
+from airflow.providers.trino.operators.trino import TrinoOperator
 
-from trino_operator import TrinoOperator
 
 ## This method is called by task2 (below) to retrieve and print to the logs the return value of task1
 def print_command(**kwargs):
@@ -27,13 +27,15 @@ with DAG(
     ## Ouput of this should be 1500 and printed in task2
     task1 = TrinoOperator(
       task_id='select_star',
-      trino_conn_id='galaxy_connection',
       sql='''
         select
                 count(*) as customers
         from
-            tpch.tiny.customer;
-                    ''')
+            tpch.tiny.customer
+                    ''',
+      trino_conn_id='galaxy_connection',
+      handler=list,
+      )
     
     ## Task 2 is a Python Operator that runs the print_command method above 
     task2 = PythonOperator(
