@@ -12,14 +12,16 @@ Before getting started, ensure you have the following:
 
 ## Installation
 
-1. git clone https://github.com/YCat33/galaxy_airflow_quickstart.git
-2. cd galaxy_airflow_quickstart
-3. Leverage the Clusters page within the Galaxy UI ([Docs]([url](https://docs.starburst.io/starburst-galaxy/query/clients.html))) to locate your connection variables. 
+1. ```git clone https://github.com/YCat33/galaxy_airflow_quickstart.git```
+2. ```cd galaxy_airflow_quickstart```
+3. Leverage the Clusters page within the Galaxy UI ([Docs]((https://docs.starburst.io/starburst-galaxy/query/clients.html))) to locate your connection variables. 
 4. Set up the environment variables. Replace <user_name>, <password>, and <host_name> with your actual values. 
   
   **Note: If your username or password includes the @ character, replace it with %40.
 
-export GALAXY_USERNAME=<user_name> GALAXY_PASSWORD=<password> GALAXY_HOST=<host_name>
+```
+  export GALAXY_USERNAME=<user_name> GALAXY_PASSWORD=<password> GALAXY_HOST=<host_name>
+```
   
   
   ## Example Dag (Galaxy Demo)
