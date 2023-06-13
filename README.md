@@ -30,4 +30,24 @@ Before getting started, ensure you have the following:
   1. Task 1 (select_star) uses the TrinoOperator to execute a SQL select statement. It counts the number of records in the "tpch.tiny.customer" table and stores the result.
   2. Task 2 (print_number) is a PythonOperator that calls the print_command method. It retrieves the return value from Task 1 and prints it to the logs.
   3. Task 3 (data_validation_check) is an SQLColumnCheckOperator that performs a data quality check. It verifies that the distinct values in the "custkey" column of the "tpch.tiny.customer" table are equal to 1500.
-  
+
+  ## Accessing the Airflow UI
+  1. Navigate to ```localhost:8080``` in your Browser and login using "airflow" as the username and password.
+  2. On the home screen, you should see a single DAG titled "starburst-galaxy-example".
+<img width="623" alt="image" src="https://github.com/YCat33/galaxy_airflow_quickstart/assets/115039992/dfdc5a3b-0087-4803-829c-f6a73a5367e5">
+
+
+  3. Trigger the DAG
+<img width="608" alt="image" src="https://github.com/YCat33/galaxy_airflow_quickstart/assets/115039992/8d8c7bb7-9132-427a-88b2-dada3abff574">
+
+
+  4. View the Logs for each task
+
+     
+<img width="617" alt="image" src="https://github.com/YCat33/galaxy_airflow_quickstart/assets/115039992/6f248a1f-4572-411e-bbf0-7438e862646e">
+<img width="615" alt="image" src="https://github.com/YCat33/galaxy_airflow_quickstart/assets/115039992/d4abe2ea-f4fa-4e8d-b0c3-f532433c0092">
+<img width="616" alt="image" src="https://github.com/YCat33/galaxy_airflow_quickstart/assets/115039992/d130ed8b-2e8c-4909-9049-4e99fb485464">
+<img width="624" alt="image" src="https://github.com/YCat33/galaxy_airflow_quickstart/assets/115039992/782a3fba-1c62-4c53-8694-c56caa85d3ec">
+<img width="623" alt="image" src="https://github.com/YCat33/galaxy_airflow_quickstart/assets/115039992/08ff7c5a-8764-4070-8432-838ce63b7e59">
+<img width="615" alt="image" src="https://github.com/YCat33/galaxy_airflow_quickstart/assets/115039992/acc8e2ec-73f7-43d9-981e-dca524b63e87">
+<img width="618" alt="image" src="https://github.com/YCat33/galaxy_airflow_quickstart/assets/115039992/b653e215-6ca5-45be-89e8-f95691b0bf98">
