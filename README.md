@@ -14,7 +14,7 @@ Before getting started, ensure you have the following:
 
 1. ```git clone https://github.com/YCat33/galaxy_airflow_quickstart.git```
 2. ```cd galaxy_airflow_quickstart```
-3. Navigate to you Galaxy Domain
+3. Navigate to your Galaxy Domain
 4. Leverage the Clusters page within the [Galaxy UI](https://docs.starburst.io/starburst-galaxy/query/clients.html) to locate your connection variables. 
 5. Set up the environment variables. Replace <user_name>, <password>, and <host_name> with your actual values. 
   
@@ -23,7 +23,15 @@ Before getting started, ensure you have the following:
 ```
   export GALAXY_USERNAME=<user_name> GALAXY_PASSWORD=<password> GALAXY_HOST=<host_name>
 ```
-  
+  6. Build the Docker Image
+
+```
+  docker-compose build --build-arg GALAXY_USERNAME=$GALAXY_USERNAME --build-arg GALAXY_PASSWORD=$GALAXY_PASSWORD --build-arg GALAXY_HOST=$GALAXY_HOST
+```
+  7. Deploy
+
+``` docker-compose up -d
+```
   
   ## Example Dag (Galaxy Demo)
   
