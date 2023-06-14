@@ -50,7 +50,7 @@ Before getting started, ensure you have the following:
 <img width="623" alt="image" src="https://github.com/YCat33/galaxy_airflow_quickstart/assets/115039992/dfdc5a3b-0087-4803-829c-f6a73a5367e5">
 
 
-  2. Trigger the DAG
+  2. Trigger the DAG by clicking the “play” button on the right-hand side of the screen
 <img width="608" alt="image" src="https://github.com/YCat33/galaxy_airflow_quickstart/assets/115039992/8d8c7bb7-9132-427a-88b2-dada3abff574">
 
 
