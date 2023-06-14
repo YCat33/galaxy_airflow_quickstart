@@ -30,7 +30,8 @@ Before getting started, ensure you have the following:
 ```
   7. Deploy
 
-``` docker-compose up -d
+```
+  docker-compose up -d
 ```
   
   ## Example Dag (Galaxy Demo)
