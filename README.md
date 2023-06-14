@@ -50,11 +50,11 @@ Before getting started, ensure you have the following:
 <img width="623" alt="image" src="https://github.com/YCat33/galaxy_airflow_quickstart/assets/115039992/dfdc5a3b-0087-4803-829c-f6a73a5367e5">
 
 
-  3. Trigger the DAG
+  2. Trigger the DAG
 <img width="608" alt="image" src="https://github.com/YCat33/galaxy_airflow_quickstart/assets/115039992/8d8c7bb7-9132-427a-88b2-dada3abff574">
 
 
-  4. View the Logs for each task
+  3. View the Logs for each task
 
      
 <img width="617" alt="image" src="https://github.com/YCat33/galaxy_airflow_quickstart/assets/115039992/6f248a1f-4572-411e-bbf0-7438e862646e">
