@@ -28,21 +28,25 @@ Before getting started, ensure you have the following:
 ```
   docker-compose build --build-arg GALAXY_USERNAME=$GALAXY_USERNAME --build-arg GALAXY_PASSWORD=$GALAXY_PASSWORD --build-arg GALAXY_HOST=$GALAXY_HOST
 ```
+
+  **These variables are used within the Docker-Compose.yaml file to instantiate a connection to Starburst Galaxy (see line 75 [here](https://github.com/YCat33/galaxy_airflow_quickstart/blob/31b28bbf9237b26cddbab380f416e80384e65cd3/docker-compose.yaml#L75))
+  
   7. Deploy
 
 ```
   docker-compose up -d
 ```
-  
-  ## Example Dag (Galaxy Demo)
+
+  8. Navigate to ```localhost:8080``` in your Browser and login using "airflow" as the username and password.
+
+  ## Example Dag (starburst-galaxy-example)
   
   1. Task 1 (select_star) uses the TrinoOperator to execute a SQL select statement. It counts the number of records in the "tpch.tiny.customer" table and stores the result.
   2. Task 2 (print_number) is a PythonOperator that calls the print_command method. It retrieves the return value from Task 1 and prints it to the logs.
   3. Task 3 (data_validation_check) is an SQLColumnCheckOperator that performs a data quality check. It verifies that the distinct values in the "custkey" column of the "tpch.tiny.customer" table are equal to 1500.
 
-  ## Accessing the Airflow UI
-  1. Navigate to ```localhost:8080``` in your Browser and login using "airflow" as the username and password.
-  2. On the home screen, you should see a single DAG titled "starburst-galaxy-example".
+  ## Running the Example DAG
+  1. From the Airflow UI home screen, you should see a single DAG titled "starburst-galaxy-example".
 <img width="623" alt="image" src="https://github.com/YCat33/galaxy_airflow_quickstart/assets/115039992/dfdc5a3b-0087-4803-829c-f6a73a5367e5">
 
 
