@@ -18,7 +18,7 @@ Before getting started, ensure you have the following:
 4. Leverage the Clusters page within the [Galaxy UI](https://docs.starburst.io/starburst-galaxy/query/clients.html) to locate your connection variables. 
 5. Set up the environment variables. Replace <user_name>, <password>, and <host_name> with your actual values. 
   
-  **Note: If your username or password includes the @ character, replace it with %40.
+  **Note: if your username or password includes the special character “@” (replace with “%40”) or “/” (replace with “%2F”) to accounting for string encoding
 
 ```
   export GALAXY_USERNAME=<user_name> GALAXY_PASSWORD=<password> GALAXY_HOST=<host_name>
