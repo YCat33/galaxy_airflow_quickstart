@@ -1,5 +1,4 @@
 import os
-import urllib.parse
 import sys
 
 # Check if the required number of arguments is provided
@@ -18,11 +17,20 @@ airflow_uid_dict = {
      'AIRFLOW_GID': '0'
 }
 
+def url_encode(s):
+    encoded_chars = []
+    for char in s:
+        if char.isalnum() or char in ['-', '_', '.', '~']:
+            encoded_chars.append(char)
+        else:
+            encoded_chars.append(f"%{ord(char):02X}")
+    return ''.join(encoded_chars)
+
 def encode_special_chars(env_vars_dict, airflow_uid_dict):
     encoded_dict = {}
     
     for env_name, param in env_vars_dict.items():
-        encoded_param = urllib.parse.quote(param, safe='')
+        encoded_param = url_encode(param)
         encoded_dict[env_name] = encoded_param
         
     encoded_dict.update(airflow_uid_dict)
