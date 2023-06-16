@@ -1,5 +1,4 @@
 import pendulum
-
 from airflow import DAG
 from airflow.operators.python_operator import PythonOperator
 from airflow.providers.common.sql.operators.sql import SQLColumnCheckOperator
@@ -21,6 +20,7 @@ with DAG(
     catchup=False,
     tags=['demo'],
 ) as dag:
+
 
     ## Task 1 runs a Trino select statement to count the number of records 
     ## in the tpch.tiny.customer table
