@@ -16,17 +16,10 @@ Before getting started, ensure you have the following:
 2. ```cd galaxy_airflow_quickstart```
 3. Navigate to your Galaxy Domain
 4. Leverage the Clusters page within the [Galaxy UI](https://docs.starburst.io/starburst-galaxy/query/clients.html) to locate your connection variables. 
-5. Set up the environment variables. Replace <user_name>, <password>, and <host_name> with your actual values. 
-  
-  **Note: if your username or password includes the special character “@” (replace with “%40”) or “/” (replace with “%2F”) to account for string encoding
+5. Run python script to configure Galaxy Connection (e.g. replacing "@' with "%40" to account for string encoding).  Set up the environment variables. Replace <user>, <password>, and <host> with your actual values.
 
 ```
-  export GALAXY_USERNAME=<user_name> GALAXY_PASSWORD=<password> GALAXY_HOST=<host_name>
-```
-  6. Build the Docker Image
-
-```
-  docker-compose build --build-arg GALAXY_USERNAME=$GALAXY_USERNAME --build-arg GALAXY_PASSWORD=$GALAXY_PASSWORD --build-arg GALAXY_HOST=$GALAXY_HOST
+  python encode_special_chars.py '<host>' '<user>' '<password>'
 ```
 
   **These variables are used within the Docker-Compose.yaml file to instantiate a connection to Starburst Galaxy (see line 75 [here](https://github.com/YCat33/galaxy_airflow_quickstart/blob/31b28bbf9237b26cddbab380f416e80384e65cd3/docker-compose.yaml#L75))
