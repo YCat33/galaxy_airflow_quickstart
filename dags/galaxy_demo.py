@@ -19,6 +19,7 @@ with DAG(
     start_date=pendulum.datetime(2022, 10, 27, tz="US/Central"),
     catchup=False,
     tags=['demo'],
+    description= "Demo DAG for Blog Post"
 ) as dag:
 
 
