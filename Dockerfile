@@ -14,17 +14,5 @@ COPY requirements.txt .
 # Install the dependencies
 RUN pip install  -r requirements.txt
 
-USER root
-
-# Set working directory and copy python script
-WORKDIR /usr/app/src 
-
-COPY encode_special_chars.py ./
-
-ARG HOST
-ARG USER
-ARG PASSWORD
-
-CMD ["python", "encode_special_chars.py", "$HOST", "$USER", "$PASSWORD"]
 
 
