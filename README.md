@@ -26,10 +26,12 @@ Before getting started, ensure you have the following:
 ```
   ./setup.sh '<host>' '<user>' '<password>'
 ```
-  **This script performs the follwing steps
-    - Runs the encode_special_chars python script that sets the connection parameters in the correct format (e.g. replacing "@' with "%40" to account for string encoding).  
-    - Runs the DockerFile to build the image, which involves installing the "apache-airflow-providers-trino" package and setting up the Galaxy Connection (These variables are used within the Docker-Compose.yaml file to instantiate a connection to Starburst Galaxy (see line 75 [here](https://github.com/YCat33/galaxy_airflow_quickstart/blob/31b28bbf9237b26cddbab380f416e80384e65cd3/docker-compose.yaml#L75)))
-    - Deploys Docker
+  *This script performs the follwing steps
+  
+    1. Runs the encode_special_chars script that sets the connection parameters to the necessary format (e.g. replacing "@' with "%40").
+    2. Runs the DockerFile to build the image, which involves installing the "apache-airflow-providers-trino" package and setting up the Galaxy Connection (These variables are used within the Docker-Compose.yaml file to instantiate a connection to Starburst Galaxy (see line 75 [here](https://github.com/YCat33/galaxy_airflow_quickstart/blob/31b28bbf9237b26cddbab380f416e80384e65cd3/docker-compose.yaml#L75)))
+    3. Deploys the necessary Docker containers based off the docker-compose file
+
   
 7. Navigate to ```localhost:8080``` in your Browser and login using "airflow" as the username and password.
 
