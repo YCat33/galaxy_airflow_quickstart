@@ -40,10 +40,14 @@ def encode_special_chars(env_vars_dict, airflow_uid_dict):
 # Encode the special characters in the parameters
 env_vals = encode_special_chars(env_vars_dict, airflow_uid_dict)
 
-
 # Write the encoded parameters to a file
 output_file = ".env"
-with open(output_file, "w") as file:
+
+if not os.path.exists(output_file):
+    # Create the file if it doesn't exist
+    open(output_file, 'a').close()
+    
+with open(output_file, "a") as file:
     for env_name, env_value in env_vals.items():
         os.environ[env_name]=env_value
         file.write(f"{env_name}={env_value}\n")

@@ -89,14 +89,6 @@ x-airflow-common:
       condition: service_healthy
 
 services:
-  encoding_service:
-    build:
-      context: .
-      args:
-        - HOST
-        - USER
-        - PASSWORD
-
   postgres:
     image: postgres:13
     environment:
